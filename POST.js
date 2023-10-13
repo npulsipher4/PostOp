@@ -9,8 +9,8 @@ const url = 'https://studio.twilio.com/v2/Flows/FW5ed3a14fd7b0b1a39c7de8a2cabfcc
 
 // Define the data you want to send in the POST request
 const postData = {
-  to: 'recipient_phone_number', // Replace with the recipient's phone number
-  from: 'your_twilio_phone_number', // Replace with your Twilio phone number
+  to: document.getElementById("recipientPhoneNumber"), // Replace with the recipient's phone number
+  from: docu.getElementById("yourPhoneNumber")", // Replace with your Twilio phone number
   parameters: {
     // Define any additional parameters required for your execution
   },
