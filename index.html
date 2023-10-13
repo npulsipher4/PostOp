@@ -14,36 +14,5 @@
         <br>
         <button type="submit">Submit</button>
     </form>
-
-    <script>
-        document.getElementById('triggerForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const recipientPhoneNumber = document.getElementById('recipientPhoneNumber').value;
-            const yourPhoneNumber = document.getElementById('yourPhoneNumber').value;
-
-            // Perform the AJAX request to trigger the Twilio Flow
-            // Include the recipientPhoneNumber and yourPhoneNumber in the request
-            // Use the fetch API or another AJAX library
-            // Example using fetch:
-            fetch('/trigger-flow', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ recipientPhoneNumber, yourPhoneNumber })
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Twilio Flow triggered successfully.');
-                } else {
-                    alert('Failed to trigger Twilio Flow. Please try again later.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred. Please try again later.');
-            });
-        });
-    </script>
 </body>
 </html>
