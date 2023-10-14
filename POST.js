@@ -22,3 +22,4 @@ client.studio.flows('FW5ed3a14fd7b0b1a39c7de8a2cabfcc38')
   .create({ to: postData.to, from: postData.from, parameters: postData.parameters })
   .then(execution => console.log('Execution created with SID:', execution.sid))
   .catch(error => console.error('Error creating execution:', error));
+  .catch(error => alert("Error creating execution"));
