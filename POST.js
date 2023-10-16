@@ -1,5 +1,6 @@
-const accountSid = 'your_account_sid'; // Replace with your Twilio Account SID
-const authToken = 'your_auth_token';   // Replace with your Twilio Auth Token
+const accountSid = account.env.accountSid; // Replace with your Twilio Account SID
+const authToken = account.env.authToken;   // Replace with your Twilio Auth Token
+const twilioNumber = account.env.twilioNumber
 
 const twilio = require('twilio');
 const client = twilio(accountSid, authToken);
@@ -10,7 +11,7 @@ const url = 'https://studio.twilio.com/v2/Flows/FW5ed3a14fd7b0b1a39c7de8a2cabfcc
 // Define the data you want to send in the POST request
 const postData = {
   to: document.getElementById("recipientPhoneNumber"), // Replace with the recipient's phone number
-  from: docu.getElementById("yourPhoneNumber")", // Replace with your Twilio phone number
+  from: twilioNumber, // Replace with your Twilio phone number
   parameters: {
     // Define any additional parameters required for your execution
   },
@@ -22,4 +23,3 @@ client.studio.flows('FW5ed3a14fd7b0b1a39c7de8a2cabfcc38')
   .create({ to: postData.to, from: postData.from, parameters: postData.parameters })
   .then(execution => console.log('Execution created with SID:', execution.sid))
   .catch(error => console.error('Error creating execution:', error));
-  .catch(error => alert("Error creating execution"));

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Trigger Twilio Flow</title>
-    <script src="POST.js"></script>
+    <title>Post Op</title>
 </head>
 <body>
-    <h1>Trigger Twilio Flow</h1>
+    <h1>Post Op</h1>
     <form id="triggerForm">
         <label for="recipientPhoneNumber">Recipient Phone Number:</label>
         <input type="tel" id="recipientPhoneNumber" name="recipientPhoneNumber" required>
         <br>
-        <label for="yourPhoneNumber">Your Phone Number (Twilio Number):</label>
-        <input type="tel" id="yourPhoneNumber" name="yourPhoneNumber" required>
+        <label for="optIn">Opt-In to Messages?</label>
+        <input type="checkbox" id="optIn name="optIn">
         <br>
         <button type="submit">Submit</button>
     </form>
 </body>
+<script src="POST.js"></script>
 </html>
