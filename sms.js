@@ -5,15 +5,15 @@ const twilioNumber = +18337911819
 
 const client = require('twilio')(accountSid, authToken);
 
-/* client.messages
+client.messages
     .create({
         body: 'lets go',
         from: twilioNumber,
-        to: '+12087860961'
+        to: document.getElementById("recipientPhoneNumber")
     })
-    .then(message => console.log(message.sid)); */
+    .then(message => console.log(message.sid));
 
-client.studio.v2.flows('FW5ed3a14fd7b0b1a39c7de8a2cabfcc38')
+/* client.studio.v2.flows('FW5ed3a14fd7b0b1a39c7de8a2cabfcc38')
     .executions
     .create({
         to: '+12087860961',
@@ -21,5 +21,5 @@ client.studio.v2.flows('FW5ed3a14fd7b0b1a39c7de8a2cabfcc38')
         parameters: null })
     .then(execution => console.log('Execution created with SID:', execution.sid))
     .then(message => console.log(message.sid))
-    .catch(error => console.error('Error creating execution:', error));
+    .catch(error => console.error('Error creating execution:', error)); */
     
