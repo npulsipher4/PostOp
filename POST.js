@@ -1,6 +1,6 @@
-const accountSid = account.env.accountSid; // Replace with your Twilio Account SID
-const authToken = account.env.authToken;   // Replace with your Twilio Auth Token
-const twilioNumber = account.env.twilioNumber
+const accountSid = account.env.TWILIO_ACCOUNT_SID; // Replace with your Twilio Account SID
+const authToken = process.env.TWILIO_AUTH_TOKEN;   // Replace with your Twilio Auth Token
+const twilioNumber = process.env.TWILIO_NUMBER_POSTOP
 
 const twilio = require('twilio');
 const client = twilio(accountSid, authToken);
@@ -18,8 +18,9 @@ const postData = {
 };
 
 // Make the POST request
-client.studio.flows('FW5ed3a14fd7b0b1a39c7de8a2cabfcc38')
+client.studio.v2.flows('FW5ed3a14fd7b0b1a39c7de8a2cabfcc38')
   .executions
   .create({ to: postData.to, from: postData.from, parameters: postData.parameters })
   .then(execution => console.log('Execution created with SID:', execution.sid))
+  .then(message => console.log(message.sid))
   .catch(error => console.error('Error creating execution:', error));
