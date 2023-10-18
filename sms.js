@@ -1,8 +1,10 @@
 require('dotenv').config();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
+
 const twilioNumber = process.env.TWILIO_NUMBER_POSTOP;
 const recipientNumber = document.getElementById('recipientPhoneNumber');
+
 const client = require('twilio')(accountSid, authToken);
 
 const triggerForm  = document.getElementById('triggerForm');
