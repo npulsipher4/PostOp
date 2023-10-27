@@ -8,7 +8,7 @@ function postRequest() {
     };
 
     // URL of your server endpoint
-    const url = 'http:localhost:3000';  // Replace with the actual endpoint URL
+    const url = 'https://postopserver.gamergoat112.repl.co';  // Replace with the actual endpoint URL
 
     // Send a POST request
     fetch(url, {
