@@ -1,4 +1,4 @@
-triggerForm.addEventListener('submit', executeFlow);
+triggerForm.addEventListener('submit', postRequest);
 
 function postRequest() {
     const data = {
