@@ -4,7 +4,7 @@ function postRequest() {
     const data = {
         treatment: 'wt',
         apptDate: '1903-12-17',
-        phone: document.getElementById('recipientPhoneNumber')
+        phone: document.getElementById('recipientPhoneNumber').value
     };
 
     // URL of your server endpoint
