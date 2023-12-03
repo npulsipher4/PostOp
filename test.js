@@ -1,10 +1,12 @@
-triggerForm.addEventListener('submit', postRequest);
 
 function postRequest() {
+
+    const phoneNumber = '+12087860961';
+
     const data = {
         treatment: 'wt',
         apptDate: '1903-12-17',
-        phone: document.getElementById('recipientPhoneNumber').value
+        phone: '+12087860961'
     };
 
     // URL of your server endpoint
@@ -27,3 +29,5 @@ function postRequest() {
         console.error('Error:', error);
     });
 };
+
+postRequest();
