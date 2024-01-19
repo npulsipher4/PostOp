@@ -16,19 +16,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Check if the phone number is valid
         if (iti.isValidNumber()) {
-                        // Display the selected country and formatted phone number (for demonstration purposes)
+            // Display the selected country and formatted phone number (for demonstration purposes)
             // alert(`Selected Country: ${selectedCountry}\nFormatted Phone Number: ${formattedPhoneNumber}`);
 
             // Call postRequest and pass the formattedPhoneNumber
             postRequest(formattedPhoneNumber);
-            
         } else {
             // Handle the case when the phone number is not valid (e.g., show an error message)
             alert('Please enter a valid phone number.');
         }
 
-        // Prevent the default form submission
-        event.preventDefault();
     });
 });
 
@@ -36,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function postRequest(formattedPhoneNumber) {
-    event.preventDefault();
+    // event.preventDefault();
 
-    // URL of your server endpoint
+    // URL of the server endpoint
     const url = 'http://localhost:3000/users';  // Replace with the actual endpoint URL
 
     // Send a POST request
