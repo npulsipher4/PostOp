@@ -36,7 +36,7 @@ function postRequest(formattedPhoneNumber) {
     // event.preventDefault();
 
     // URL of the server endpoint
-    const url = 'http://localhost:3000/users';  // Replace with the actual endpoint URL
+    const url = 'https://postopweb.azurewebsites.net/users';  // Replace with the actual endpoint URL
 
     // Send a POST request
     fetch(url, {
@@ -45,8 +45,8 @@ function postRequest(formattedPhoneNumber) {
             'Content-Type': 'application/json; charset=UTF-8'
         },
         body: JSON.stringify({
-            treatment: document.querySelector('input[name="treatment"]:checked').value,
-            apptDate: '1903-12-17',
+            treatment: document.querySelector('input[name="treatment"]:checked').id,
+            apptDate: new Date(),/*document.getElementById('apptDate').value*/
             phone: formattedPhoneNumber
         })
     })
