@@ -36,7 +36,7 @@ function postRequest(formattedPhoneNumber) {
     // event.preventDefault();
 
     // URL of the server endpoint
-    const url = 'https://postopweb.azurewebsites.net/users';  // Replace with the actual endpoint URL
+    const url = 'https://postopserver.azurewebsites.net/users';  // Replace with the actual endpoint URL
 
     // Send a POST request
     fetch(url, {
