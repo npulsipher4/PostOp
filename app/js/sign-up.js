@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function postRequest(formattedPhoneNumber, treatment) {
-    const url = 'https://postopweb.azurewebsites.net/users';
+    const url = 'https://postopserver.azurewebsites.net/users';
 
     fetch(url, {
         method: 'POST',
