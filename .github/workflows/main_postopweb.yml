@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_f09ea88168a4462a983c3f69c12ba31f }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_8911e54dec124375ab7d550a2f8139d3 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_fa57e768159c4a299b1a1e4f2839703f }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_b0a102b1850e4cfe9ddc4fe36802d224 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_f09ea88168a4462a983c3f69c12ba31f }}/postop:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_fa57e768159c4a299b1a1e4f2839703f }}/npulsipher4/postop:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'postopweb'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_fb40d68f492c408ea369b390d1e7a02c }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_f09ea88168a4462a983c3f69c12ba31f }}/postop:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_fb6e8b7850984a7f8769e2d1e8f6115a }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_fa57e768159c4a299b1a1e4f2839703f }}/npulsipher4/postop:${{ github.sha }}'
