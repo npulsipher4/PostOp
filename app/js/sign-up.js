@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function postRequest(formattedPhoneNumber, treatment) {
-    const url = 'https://postopserver.azurewebsites.net/users';
+    const url = 'https://postopweb.azurewebsites.net/users';
 
     fetch(url, {
         method: 'POST',
@@ -49,11 +49,20 @@ function postRequest(formattedPhoneNumber, treatment) {
         },
         body: JSON.stringify({
             treatment: treatment,
-            apptDate: new Date(),
             phone: formattedPhoneNumber
         })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.indexOf("application/json") !== -1) {
+            return response.json();
+        } else {
+            throw new Error("Oops, we haven't got JSON!");
+        }
+    })
     .then(json => {
         console.log('Response from the server:', json);
         alert('Thank you for signing up!');
