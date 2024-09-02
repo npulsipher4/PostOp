@@ -3,6 +3,8 @@
     <footer>
         <p>&copy; 2023 Post Op. All rights reserved.</p>
     </footer>
-    <script src="/js/navigation.js"></script>
+    <% if (typeof jsfile !== 'undefined') { %>
+        <script src="/js/<%= jsfile %>"></script>
+    <% } %>
 </body>
 </html>
