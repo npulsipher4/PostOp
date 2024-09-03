@@ -63,3 +63,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial active link update
     updateActiveNavLink();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navList = document.querySelector('.nav-list');
+
+    if (!menuToggle || !navList) {
+        console.error('Menu elements not found');
+        return;
+    }
+
+    function toggleMenu() {
+        navList.classList.toggle('active');
+        navList.style.display = navList.classList.contains('active') ? 'flex' : 'none';
+    }
+
+    menuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleMenu();
+    });
+
+    // Close the menu when a link is clicked
+    navList.addEventListener('click', function(e) {
+        if (e.target.classList.contains('nav-link')) {
+            toggleMenu();
+        }
+    });
+
+    // Close the menu when clicking outside of it
+    document.addEventListener('click', function(e) {
+        if (!navList.contains(e.target) && !menuToggle.contains(e.target) && navList.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+});
